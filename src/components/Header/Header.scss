@@ -27,20 +27,6 @@
     }
   }
 
-  &-button {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 0 3.2rem;
-    background-color: $color--primary-blue;
-    border-radius: 1rem;
-    border: none;
-    &__text {
-      width: 80%;
-      color: $color--primary-white;
-    }
-  }
-
   &-logo {
     display: flex;
     justify-content: center;
