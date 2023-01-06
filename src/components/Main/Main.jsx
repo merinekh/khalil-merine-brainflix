@@ -1,4 +1,7 @@
 import "./Main.scss";
+import viewsIcon from "../../assets/images/views.svg";
+import likesIcon from "../../assets/images/likes.svg";
+
 function Main() {
   return (
     <main className="main">
@@ -16,13 +19,23 @@ function Main() {
             <h3 className="main-bio-info-descr__author">By Red Crow</h3>
             <p className="main-bio-info-descr__date">07/11/2021</p>
           </div>
-          <div className="main-bio-views">
-            <img src="" alt="" className="main-bio-views__icons" />
-            <p clssName="main-bio-views__count">1,001,023</p>
-          </div>
-          <div className="main-bio-likes">
-            <img src="" alt="" className="main-bio-likes__icons" />
-            <p clssName="main-bio-likes__count">110,985</p>
+          <div className="main-bio-info-stats">
+            <div className="main-bio-info-stats-views">
+              <img
+                src={viewsIcon}
+                alt=""
+                className="main-bio-info-stats-views__icons"
+              />
+              <p clssName="main-bio-info-stats-views__count">1,001,023</p>
+            </div>
+            <div className="main-bio-info-stats-likes">
+              <img
+                src={likesIcon}
+                alt=""
+                className="main-bio-info-stats-likes__icons"
+              />
+              <p clssName="main-bio-info-stats-likes__count">110,985</p>
+            </div>
           </div>
         </div>
         <hr className="main-bio__line" />
