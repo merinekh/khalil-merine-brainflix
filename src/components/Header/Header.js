@@ -3,6 +3,7 @@ import { IoLogoYoutube } from "react-icons/io";
 import BrainflixLogo from "../../assets/images/BrainFlix-logo.svg";
 import Avatar from "../../assets/images/Mohan-muruge.jpg";
 import upload from "../../assets/images/upload.svg";
+import searchicon from "../../assets/images/search.svg";
 
 function Header() {
   return (
@@ -16,6 +17,7 @@ function Header() {
           type="search"
           name="search"
           id=""
+          placeholder=" Search"
         />
         <img src={Avatar} alt="" className="header-search__avatar" />
       </div>
