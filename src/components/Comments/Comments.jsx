@@ -4,10 +4,33 @@ import commentIcon from "../../assets/images/add_comment.svg";
 import data from "../../data/video-details.json";
 
 function Comments() {
-  console.log(data[0].comments);
+  const dataComments = data[0].comments;
+  console.log(dataComments);
+  const commentsGen = dataComments.map((element) => {
+    let { comment, name, timestamp } = element;
+    timestamp = new Date(timestamp).toLocaleDateString();
+
+    console.log(name, comment, timestamp);
+    return (
+      <div className="comment-container-items">
+        <div className="comment-container">
+          <img src="" alt="" className="comment__image" />
+          <div className="comment-inputs">
+            <div className="comment-profile">
+              <p className="comment-profil__name">{name}</p>
+              <p className="comment-profil__date">{timestamp}</p>
+            </div>
+            <p className="comment__comment">{comment}</p>
+          </div>
+        </div>
+
+        <hr class="section-form__line"></hr>
+      </div>
+    );
+  });
   return (
     <section className="comments">
-      <h2 className="comments__title">3 Comments</h2>
+      <h3 className="comments__title">3 Comments</h3>
       <form action="" class="comments-form-main">
         <img src={mohAvatar} alt="" class="comments-form__image" />
         <div class="comments-form-inputs">
@@ -32,6 +55,10 @@ function Comments() {
           </button>
         </div>
       </form>
+      <section className="comments-container">
+        <hr class="section-form__line"></hr>
+        <div className="comment-container-gen">{commentsGen}</div>
+      </section>
     </section>
   );
 }

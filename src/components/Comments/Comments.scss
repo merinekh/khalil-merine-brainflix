@@ -26,7 +26,6 @@
         background-color: rgba($color--secondary-mercury, 0.2);
         border-radius: 0.4rem;
         border: rgba($color--primary-silver, 0.2) solid 0.1rem;
-        color: #000;
       }
     }
 
@@ -36,5 +35,26 @@
       font-weight: 500;
       color: $color--primary-silver;
     }
+  }
+}
+
+.comment {
+  &-container {
+    display: flex;
+    img {
+      width: 4rem;
+      height: 4rem;
+      margin-right: 1.6rem;
+      border-radius: 50%;
+      background-color: $color--primary-silver;
+    }
+  }
+  &-inputs {
+    width: 80%;
+  }
+  &-profile {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 }
