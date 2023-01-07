@@ -1,0 +1,27 @@
+@use "../../../styles/partials/variables" as *;
+
+.main {
+  &-bio {
+    &-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        color: $color--primary-silver;
+      }
+      &-stats {
+        margin-right: 2.4rem;
+        &-views,
+        &-likes {
+          display: flex;
+          margin: 0 1.6rem;
+
+          &__icons {
+            margin-right: 1.6rem;
+          }
+        }
+      }
+    }
+  }
+}
