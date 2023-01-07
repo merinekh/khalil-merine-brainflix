@@ -8,9 +8,9 @@ function Form() {
       <form action="" class="comments-form-main">
         <img src={mohAvatar} alt="" class="comments-form__image" />
         <div class="comments-form-inputs">
-          <p class="comments-form-subtitle__comment comments-form-subtitle">
+          <h3 class="comments-form-subtitle__comment comments-form-subtitle">
             JOIN THE CONVERSATION
-          </p>
+          </h3>
           <textarea
             name=""
             id=""

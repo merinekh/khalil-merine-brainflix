@@ -31,7 +31,6 @@
 
     &-subtitle {
       margin: 0;
-      font-size: 1.2rem;
       font-weight: 500;
       color: $color--primary-silver;
     }
@@ -56,5 +55,9 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+
+    p {
+      color: $color--primary-silver;
+    }
   }
 }

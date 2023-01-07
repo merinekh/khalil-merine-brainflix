@@ -6,7 +6,11 @@ function CommentSection() {
   // console.log(dataComments);
   const commentsGen = dataComments.map((element) => {
     let { comment, name, timestamp } = element;
-    timestamp = new Date(timestamp).toLocaleDateString();
+    timestamp = new Date(timestamp).toLocaleDateString("en", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
 
     // console.log(name, comment, timestamp);
     return (
@@ -15,7 +19,7 @@ function CommentSection() {
           <img src="" alt="" className="comment__image" />
           <div className="comment-inputs">
             <div className="comment-profile">
-              <p className="comment-profil__name">{name}</p>
+              <h3 className="comment-profil__name">{name}</h3>
               <p className="comment-profil__date">{timestamp}</p>
             </div>
             <p className="comment__comment">{comment}</p>
