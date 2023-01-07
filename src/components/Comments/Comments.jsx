@@ -5,12 +5,12 @@ import data from "../../data/video-details.json";
 
 function Comments() {
   const dataComments = data[0].comments;
-  console.log(dataComments);
+  // console.log(dataComments);
   const commentsGen = dataComments.map((element) => {
     let { comment, name, timestamp } = element;
     timestamp = new Date(timestamp).toLocaleDateString();
 
-    console.log(name, comment, timestamp);
+    // console.log(name, comment, timestamp);
     return (
       <div className="comment-container-items">
         <div className="comment-container">
