@@ -1,7 +1,7 @@
 import React from "react";
 import "./Video.scss";
 import data from "../../../data/video-details.json";
-import ReactPlayer from "react-player";
+// import ReactPlayer from "react-player";
 import Controler from "./Controler/Controler";
 
 function Video() {
