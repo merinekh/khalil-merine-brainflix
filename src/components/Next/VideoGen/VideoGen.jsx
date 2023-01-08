@@ -10,7 +10,7 @@ function VideoGen() {
       <div
         className="next-videos-container"
         onClick={() => {
-          let newIndex = index;
+          let newIndex =  index;
           setindexVid(index);
           console.log(newIndex);
         }}
