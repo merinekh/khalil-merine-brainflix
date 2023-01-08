@@ -1,5 +1,9 @@
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+
 .main {
   &-video {
+    position: relative;
     margin: 1.6rem -1.6rem;
   }
   &__video {

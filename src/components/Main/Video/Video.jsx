@@ -1,6 +1,8 @@
 import React from "react";
 import "./Video.scss";
 import data from "../../../data/video-details.json";
+import ReactPlayer from "react-player";
+import Controler from "./Controler/Controler";
 
 function Video() {
   let videoData = data[0];
@@ -12,8 +14,8 @@ function Video() {
 
   return (
     <div className="main-video">
-      <video src={video} poster={image} className="main__video"></video>
-      <div className="main-video-controller"></div>
+      <video url={video} poster={image} className="main__video"></video>
+      <Controler />
     </div>
   );
 }

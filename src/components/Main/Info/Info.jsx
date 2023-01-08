@@ -6,7 +6,7 @@ import data from "../../../data/video-details.json";
 
 function Info() {
   let videoData = data[0];
-  console.log(videoData);
+  // console.log(videoData);
 
   let { channel, description, likes, timestamp, title, views } = videoData;
   return (

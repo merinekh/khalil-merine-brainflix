@@ -1,0 +1,43 @@
+@use "../../styles/partials/variables" as *;
+
+.main {
+  &-bio {
+    &-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        color: $color--primary-silver;
+        font-size: 1.6rem;
+        margin: 0;
+      }
+      &-descr {
+        display: flex;
+        flex-direction: column;
+        &__author {
+          font-size: 1.4rem;
+          margin-top: 0;
+        }
+      }
+      &-stats {
+        display: flex;
+        flex-direction: column;
+        margin-right: 2.4rem;
+        div {
+          margin: 0.7rem 0;
+        }
+        &-views,
+        &-likes {
+          display: flex;
+          align-items: center;
+
+          &__icons {
+            margin-right: 1.6rem;
+            width: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,34 +1,8 @@
-@use "../../styles/partials/fonts.scss" as *;
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins.scss" as *;
-@use "../../styles/partials/reset.scss" as *;
-
 .header {
   display: flex;
   flex-direction: column;
   justify-content: baseline;
   width: 100%;
-
-  &-search {
-    display: flex;
-    margin: 1.6rem 0;
-    &__input {
-      width: 80%;
-      margin-right: 1.6rem;
-      border-radius: 1rem;
-      border-radius: 0.4rem;
-      border: #e1e1e1 solid 0.1rem;
-      color: $color--primary-black;
-    }
-    &__avatar {
-      height: 1.6em;
-      width: 3.6rem;
-      border-radius: 50%;
-    }
-  }
-
-  &-logo {
-    display: flex;
-    justify-content: center;
-  }
 }
