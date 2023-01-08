@@ -7,7 +7,7 @@ import Info from "./Info/Info";
 
 function Main() {
   let videoData = data[0];
-  console.log(videoData);
+  // console.log(videoData);
 
   let { channel, description, likes, timestamp, title, views } = videoData;
 

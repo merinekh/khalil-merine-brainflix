@@ -10,7 +10,7 @@ function Video() {
 
   let { duration, image, video } = videoData;
 
-  console.log(video);
+  // console.log(video);
 
   return (
     <div className="main-video">
