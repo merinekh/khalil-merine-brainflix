@@ -23,6 +23,12 @@ body {
     padding: 0;
     background-color: $color--primary-white;
   }
+  @include tablet {
+    margin: 1.6rem 3.6rem;
+  }
+  @include desktop {
+    margin: 1.6rem 10rem;
+  }
 }
 
 * a,
@@ -41,12 +47,18 @@ h1 {
     line-height: 4.4rem;
     font-weight: 700;
   }
+  @include desktop {
+    font-size: 4.4rem;
+    line-height: 4.4rem;
+    font-weight: 700;
+  }
 }
 h2 {
   font-size: 1.2rem;
   line-height: 2rem;
   font-weight: 700;
   @include tablet {
+    font-size: 1.6rem;
   }
 }
 h3 {
@@ -65,6 +77,10 @@ p {
   font-weight: 400;
   @include tablet {
     font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+  @include desktop {
+    font-size: 1.8rem;
     line-height: 2.2rem;
   }
 }

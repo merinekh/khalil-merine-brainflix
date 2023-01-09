@@ -1,11 +1,12 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .main {
   &-bio {
     &-info {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       margin: 1rem 0;
       p {
         color: $color--primary-silver;
@@ -19,6 +20,14 @@
           font-size: 1.4rem;
           margin-top: 0;
         }
+
+        @include tablet {
+          flex-direction: row;
+          &__author {
+            margin-right: 1.6rem;
+            font-size: 2rem;
+          }
+        }
       }
       &-stats {
         display: flex;
@@ -26,6 +35,11 @@
         margin-right: 2.4rem;
         div {
           margin: 0.7rem 0;
+          align-items: center;
+          @include tablet {
+            margin: 0;
+            margin-right: 1.6rem;
+          }
         }
         &-views,
         &-likes {
@@ -37,10 +51,44 @@
             width: 2.5rem;
           }
         }
+
+        @include tablet {
+          flex-direction: row;
+          width: 30%;
+          justify-content: space-between;
+        }
+      }
+      @include tablet {
+        margin: 0;
+        * p {
+          font-size: 1.6rem;
+        }
+      }
+      @include desktop {
+        * p {
+          font-size: 1.8rem;
+        }
       }
     }
     &__line {
       margin: 0;
     }
+    @include desktop {
+      &__title {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  &-video {
+    &-info {
+      @include tablet {
+        & > hr:first-of-type {
+          display: none;
+        }
+      }
+    }
+  }
+  &__video {
+    width: 100vw;
   }
 }

@@ -13,6 +13,9 @@
       height: 2rem;
 
       &-play {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 10%;
       }
       &__play {
@@ -21,6 +24,10 @@
         width: 100%;
         padding: 1.6rem 2.4rem;
         height: 2rem;
+
+        @include tablet {
+          width: 70%;
+        }
       }
       &-timeline {
         display: flex;
@@ -42,24 +49,48 @@
       }
       &-options {
         width: 20%;
+
+        @include tablet {
+          width: fit-content;
+        }
       }
       &__play,
       &-options,
       &-timeline {
         color: $color--primary-white;
         display: flex;
+        justify-content: center;
         align-items: center;
         padding: 1.1rem 0.6rem;
         border: none;
         border-radius: 0.6rem;
         background-color: rgba($color--secondary-darkblack, 0.5);
+
+        @include tablet {
+          height: 3rem;
+        }
+        @include desktop {
+          height: 5rem;
+        }
       }
       &__fullscreen,
       &__volume {
+        display: flex;
+        align-items: center;
         background: none;
         border: none;
         color: $color--primary-white;
         height: 2rem;
+      }
+      @include tablet {
+        margin: 1.6rem 6rem;
+        width: 85%;
+      }
+
+      @include desktop {
+        margin: 1.6rem 15rem;
+        width: 75%;
+        height: 5rem;
       }
     }
   }

@@ -5,7 +5,9 @@ import BrainflixLogo from "../../../assets/images/BrainFlix-logo.svg";
 function Logo() {
   return (
     <div className="header-logo">
-      <img src={BrainflixLogo} alt="" className="header-logo__logo" />
+      <a href="./">
+        <img src={BrainflixLogo} alt="" className="header-logo__logo" />
+      </a>
     </div>
   );
 }

@@ -7,6 +7,9 @@
   &-form {
     &-main {
       display: flex;
+      @include tablet {
+        align-items: flex-end;
+      }
     }
     &__image {
       width: 4rem;
@@ -24,6 +27,30 @@
         background-color: rgba($color--secondary-mercury, 0.2);
         border-radius: 0.4rem;
         border: rgba($color--primary-silver, 0.2) solid 0.1rem;
+
+        @include tablet {
+          padding: 0.6rem;
+        }
+      }
+      &__Tabletbutton {
+        display: none;
+      }
+      @include tablet {
+        margin: 0 1.6rem;
+        width: 100%;
+        button {
+          display: none;
+        }
+        &__comment {
+          height: 4rem;
+        }
+        &__Tabletbutton {
+          display: flex;
+          width: 30%;
+          @include desktop {
+            width: 20%;
+          }
+        }
       }
     }
 
@@ -31,6 +58,9 @@
       margin: 0;
       font-weight: 500;
       color: $color--primary-silver;
+      @include tablet {
+        font-size: 1.2rem;
+      }
     }
   }
 }
@@ -38,6 +68,7 @@
 .comment {
   &-container {
     display: flex;
+    align-items: center;
     img {
       width: 4rem;
       height: 4rem;
@@ -45,9 +76,14 @@
       border-radius: 50%;
       background-color: $color--primary-silver;
     }
+    @include tablet {
+    }
   }
   &-inputs {
     width: 80%;
+    @include tablet {
+      width: 100%;
+    }
   }
   &-profile {
     display: flex;
@@ -56,6 +92,11 @@
 
     p {
       color: $color--primary-silver;
+    }
+  }
+  @include tablet {
+    &__comment {
+      margin: 0;
     }
   }
 }

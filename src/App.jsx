@@ -17,8 +17,10 @@ function App() {
     <div className="App">
       <Header />
       <Main />
-      <Comments />
-      <Next />
+      <div className="desktoplayout">
+        <Comments />
+        <Next />
+      </div>
     </div>
   );
 }

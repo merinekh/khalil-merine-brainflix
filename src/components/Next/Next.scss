@@ -21,6 +21,13 @@
         margin: 0;
       }
     }
+
+    @include tablet {
+      width: 50%;
+    }
+    @include desktop {
+      width: 120%;
+    }
   }
   &__video {
     width: 10rem;

@@ -6,7 +6,7 @@ function Next() {
   const [VideoData, setVideoData] = useState(data[0]);
   const choseVid = (index) => {
     setVideoData(data[index]);
-    console.log(VideoData, data[index]);
+    console.log(VideoData);
     return data[index];
   };
   // console.log(videoData);

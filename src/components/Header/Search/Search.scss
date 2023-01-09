@@ -15,6 +15,9 @@
         padding: 0.4rem;
         margin-left: 0.6rem;
       }
+      @include tablet {
+        width: 27rem;
+      }
     }
     &__input {
       width: 100%;
@@ -30,6 +33,15 @@
       height: 1.6em;
       width: 3.6rem;
       border-radius: 50%;
+    }
+
+    @include tablet {
+      margin: 0;
+      margin-left: 12rem;
+    }
+    @include desktop {
+      margin: 0;
+      margin-left: 59rem;
     }
   }
 }

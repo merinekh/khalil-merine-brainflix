@@ -25,9 +25,17 @@ function Form() {
             class="comments-form-inputs__button button"
           >
             <img src={commentIcon} alt="" className="button__icon" />
-            <h3 className="button__text">UPLOAD</h3>
+            <h3 className="button__text">COMMENT</h3>
           </button>
         </div>
+        <button
+          type="submit"
+          value="COMMENT"
+          class="comments-form-inputs__button comments-form-inputs__Tabletbutton button"
+        >
+          <img src={commentIcon} alt="" className="button__icon" />
+          <h3 className="button__text">COMMENT</h3>
+        </button>
       </form>
     </>
   );
