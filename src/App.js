@@ -1,8 +1,6 @@
 import { useState } from "react";
 import "./App.scss";
-import Comments from "./components/Comments/Comments";
 import Component from "./components/Component/Component";
-import Next from "./components/Next/Next";
 import data from "./data/video-details.json";
 
 function App() {
@@ -16,10 +14,7 @@ function App() {
     <div className="App">
       <Component />
 
-      <div className="desktoplayout">
-        <Comments />
-        <Next />
-      </div>
+      <div className="desktoplayout"></div>
     </div>
   );
 }
