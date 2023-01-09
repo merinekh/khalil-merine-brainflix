@@ -28,6 +28,13 @@
         border-radius: 0.4rem;
         border: rgba($color--primary-silver, 0.2) solid 0.1rem;
 
+        &:active {
+          border: $color--primary-blue solid 0.2rem;
+        }
+        &:invalid {
+          border: red solid 0.1rem;
+        }
+
         @include tablet {
           padding: 0.6rem;
         }
