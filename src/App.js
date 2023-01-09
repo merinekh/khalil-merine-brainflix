@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.scss";
 import Comments from "./components/Comments/Comments";
-import Header from "./components/Header/Header";
+import Component from "./components/Component/Component";
 import Main from "./components/Main/Main";
 import Next from "./components/Next/Next";
 import data from "./data/video-details.json";
@@ -15,7 +15,7 @@ function App() {
   // console.log(videoData);
   return (
     <div className="App">
-      <Header />
+      <Component />
       <Main />
       <div className="desktoplayout">
         <Comments />
