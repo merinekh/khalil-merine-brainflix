@@ -205,8 +205,8 @@ function Component() {
               <h3 className="button__text">COMMENT</h3>
             </button>
           </form>
+          <hr class="section-form__line"></hr>
           <section className="comments-container">
-            <hr class="section-form__line"></hr>
             <div className="comment-container-gen">{commentsGen}</div>
           </section>
         </section>
