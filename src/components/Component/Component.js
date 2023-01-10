@@ -16,10 +16,7 @@ import { useState } from "react";
 function Component() {
   const [videoData, setVideoData] = useState(data[0]);
   const choseVid = (index) => {
-    setVideoData(data[index]);
-    if (index > 0) {
-      setVideoData(data[index + 1]);
-    }
+    setVideoData(index);
   };
   // console.log(videoData);
 
@@ -58,14 +55,14 @@ function Component() {
 
   const vidFilter = data.filter((element) => element.title !== videoData.title);
   //   console.log(vidFilter);
-  const vidGen = vidFilter.map((element, i) => {
+  const vidGen = vidFilter.map((element) => {
     let { channel, image, title } = element;
 
     return (
       <div
         className="next-videos-container"
-        index={i}
-        onClick={() => choseVid(i)}
+        index={element}
+        onClick={() => choseVid(element)}
       >
         <img src={image} alt="" className="next__video" />
         <div className="next-videos-descr">
