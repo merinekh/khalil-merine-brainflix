@@ -182,6 +182,7 @@
     &-controller {
       display: flex;
       justify-content: space-between;
+
       position: absolute;
       bottom: 0;
       margin: 1.6rem;
@@ -212,15 +213,28 @@
         width: 70%;
         margin: 0 0.5rem;
         p {
+          display: flex;
           margin: 0;
           padding: 0 0.6rem;
           font-size: 0.9rem;
           color: $color--primary-silver;
+          @include desktop {
+            font-size: 1.6rem;
+          }
         }
 
         hr {
+          display: flex;
           width: 90%;
-          color: $color--primary-black;
+          border-width: 0.3rem;
+          border-radius: 20%;
+          border-color: $color--secondary-darkblack;
+          @include tablet {
+            border-width: 0.4rem;
+          }
+          @include desktop {
+            border-width: 0.6rem;
+          }
         }
       }
       &-options {
@@ -244,9 +258,11 @@
 
         @include tablet {
           height: 3rem;
+          padding: 1rem;
         }
         @include desktop {
           height: 5rem;
+          padding: 2rem;
         }
       }
       &__fullscreen,
@@ -257,10 +273,20 @@
         border: none;
         color: $color--primary-white;
         height: 2rem;
+
+        @include tablet {
+          height: 3rem;
+          svg {
+            display: flex;
+            margin-right: 1rem;
+            scale: 1.6;
+          }
+        }
       }
       @include tablet {
         margin: 1.6rem 6rem;
         width: 85%;
+        align-items: center;
       }
 
       @include desktop {
