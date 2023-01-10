@@ -17,16 +17,16 @@ function Component() {
   const [videoData, setVideoData] = useState(data[0]);
   const choseVid = (index) => {
     setVideoData(data[index]);
-    // console.log(data[index]);
+    if (index > 0) {
+      setVideoData(data[index + 1]);
+    }
   };
   // console.log(videoData);
 
   let { channel, description, likes, timestamp, title, views } = videoData;
 
   let { duration, image, video } = videoData;
-
   // console.log(video);
-  //   console.log(channel, description, likes, timestamp, title, views);
   const dataComments = videoData.comments;
   // console.log(dataComments);
   const commentsGen = dataComments.map((element) => {
@@ -56,7 +56,9 @@ function Component() {
     );
   });
 
-  const vidGen = data.map((element, i) => {
+  const vidFilter = data.filter((element) => element.title !== videoData.title);
+  //   console.log(vidFilter);
+  const vidGen = vidFilter.map((element, i) => {
     let { channel, image, title } = element;
 
     return (
@@ -73,7 +75,6 @@ function Component() {
       </div>
     );
   });
-
   return (
     <>
       <header className="header">
