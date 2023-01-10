@@ -20,10 +20,10 @@ function Component() {
   };
   // console.log(videoData);
 
-  let { channel, description, likes, timestamp, title, views } = videoData;
+  let { channel, description, duration, likes, image, title, video, views } =
+    videoData;
 
-  let { duration, image, video } = videoData;
-  // console.log(video);
+  //   console.log(videoData);
   const dataComments = videoData.comments;
   // console.log(dataComments);
   const commentsGen = dataComments.map((element) => {
