@@ -113,7 +113,7 @@ function Component() {
           />
         </header>
         <Routes>
-          <Route path="/videoUpload" element={<Page />} />
+          <Route path="/videoUpload" element={<Page image={image} />} />
         </Routes>
       </BrowserRouter>
       <div className="main-video">

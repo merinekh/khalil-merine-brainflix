@@ -71,7 +71,6 @@
       margin-right: 1.6rem;
       padding: 0.9rem;
       padding-left: 3rem;
-      border-radius: 1rem;
       border-radius: 0.4rem;
       border: #e1e1e1 solid 0.1rem;
       color: $color--primary-black;
@@ -450,7 +449,7 @@
         width: 100%;
         background-color: rgba($color--secondary-mercury, 0.2);
         border-radius: 0.4rem;
-        border: rgba($color--primary-silver, 0.2) solid 0.1rem;
+        border: rgba($color--primary-silver, 0.2) solid 0.2rem;
 
         &:active {
           border: $color--primary-blue solid 0.2rem;
