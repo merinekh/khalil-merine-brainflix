@@ -3,12 +3,13 @@ import React from "react";
 function Next({ videoData, data, choseVid }) {
   const vidFilter = data.filter((element) => element.title !== videoData.title);
   //   console.log(vidFilter);
-  const vidGen = vidFilter.map((element) => {
-    let { channel, image, title } = element;
+  const vidGen = vidFilter.map((element, i) => {
+    let { channel, id, image, title } = element;
 
     return (
       <div
         className="next-videos-container"
+        key={id}
         index={element}
         onClick={() => choseVid(element)}
       >
