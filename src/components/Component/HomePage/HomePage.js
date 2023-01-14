@@ -12,9 +12,6 @@ function HomePage() {
   };
   // console.log(videoData);
 
-  let { image } = videoData;
-
-  //   console.log(videoData);
   return (
     <>
       <Main videoData={videoData} />
@@ -25,5 +22,4 @@ function HomePage() {
     </>
   );
 }
-
 export default HomePage;
