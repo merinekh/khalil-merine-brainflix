@@ -1,9 +1,9 @@
 import React from "react";
-
 import BrainflixLogo from "../../../assets/images/BrainFlix-logo.svg";
 import upload from "../../../assets/images/upload.svg";
 import Avatar from "../../../assets/images/Mohan-muruge.jpg";
 import { IoMdSearch } from "react-icons/io";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
@@ -28,14 +28,16 @@ function Header() {
 
           <img src={Avatar} alt="" className="header-search__avatar" />
         </div>
-        <button className="header-button button">
-          <img
-            src={upload}
-            alt=""
-            className="header-button__icon button__icon"
-          />
-          <h3 className="header-button__text button__text">UPLOAD</h3>
-        </button>
+        <NavLink to="/videoUpload" className="navLink__upload">
+          <button className="header-button button">
+            <img
+              src={upload}
+              alt=""
+              className="header-button__icon button__icon"
+            />
+            <h3 className="header-button__text button__text">UPLOAD</h3>
+          </button>
+        </NavLink>
 
         <img
           src={Avatar}

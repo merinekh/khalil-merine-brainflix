@@ -1,8 +1,19 @@
 import "./Page.scss";
 import React from "react";
 import upload from "../../assets/images/publish.svg";
+import { useNavigate, NavLink } from "react-router-dom";
 
 function Page({ image }) {
+  let navigate = useNavigate();
+
+  const handleOnclick = () => {
+    let newTitle = document.getElementById("newTitle").value;
+    let newDescr = document.getElementById("newTitle").value;
+    console.log(newTitle, newDescr);
+    navigate(
+      newTitle && newDescr ? "/" : alert("Please Enter Title and Description")
+    );
+  };
   return (
     <>
       <div className="upload">
@@ -30,15 +41,21 @@ function Page({ image }) {
             </p>
             <textarea
               type="text"
-              name="newTitle"
-              id="newTitle"
+              name="newDescr"
+              id="newDescr"
               className="upload-content-inputs__titleinput"
               placeholder="Add a description to your video"
             />
           </form>
           <div className="upload-content-buttons">
-            <button className="upload-content-buttons__cancel">CANCEL</button>
-            <button className="upload-content-buttons__publish">
+            <NavLink to="/">
+              <button className="upload-content-buttons__cancel">CANCEL</button>
+            </NavLink>
+
+            <button
+              className="upload-content-buttons__publish"
+              onClick={handleOnclick}
+            >
               <img
                 src={upload}
                 alt=""

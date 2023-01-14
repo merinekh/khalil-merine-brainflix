@@ -51,6 +51,7 @@
   &-search {
     display: flex;
     margin: 1.6rem 0;
+    width: 100%;
 
     &-inputs {
       display: flex;
@@ -91,7 +92,11 @@
     }
   }
 }
-
+.navLink {
+  &__upload {
+    width: 100%;
+  }
+}
 .main {
   &-bio {
     &-info {
