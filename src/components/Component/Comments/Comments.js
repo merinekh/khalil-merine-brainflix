@@ -5,7 +5,7 @@ import commentIcon from "../../../assets/images/add_comment.svg";
 function Comments({ videoData }) {
   const dataComments = videoData.comments;
   // console.log(dataComments);
-  const commentsGen = dataComments.map((element) => {
+  const commentsGen = dataComments.map((element, i) => {
     let { comment, name, timestamp } = element;
     timestamp = new Date(timestamp).toLocaleDateString("en", {
       day: "2-digit",
@@ -15,7 +15,7 @@ function Comments({ videoData }) {
 
     // console.log(name, comment, timestamp);
     return (
-      <div className="comment-container-items">
+      <div className="comment-container-items" key={i}>
         <div className="comment-container">
           <img src="" alt="" className="comment__image" />
           <div className="comment-inputs">
@@ -27,7 +27,7 @@ function Comments({ videoData }) {
           </div>
         </div>
 
-        <hr class="section-form__line"></hr>
+        <hr className="section-form__line"></hr>
       </div>
     );
   });
@@ -35,10 +35,10 @@ function Comments({ videoData }) {
     <>
       <section className="comments">
         <h2 className="comments__title">3 Comments</h2>
-        <form action="" class="comments-form-main">
-          <img src={mohAvatar} alt="" class="comments-form__image" />
-          <div class="comments-form-inputs">
-            <h3 class="comments-form-subtitle__comment comments-form-subtitle">
+        <form action="" className="comments-form-main">
+          <img src={mohAvatar} alt="" className="comments-form__image" />
+          <div className="comments-form-inputs">
+            <h3 className="comments-form-subtitle__comment comments-form-subtitle">
               JOIN THE CONVERSATION
             </h3>
             <textarea
@@ -47,12 +47,12 @@ function Comments({ videoData }) {
               cols="33"
               rows="4"
               placeholder="Enter your comment"
-              class="comments-form-inputs__comment"
+              className="comments-form-inputs__comment"
             ></textarea>
             <button
               type="submit"
               value="COMMENT"
-              class="comments-form-inputs__button button"
+              className="comments-form-inputs__button button"
             >
               <img src={commentIcon} alt="" className="button__icon" />
               <h3 className="button__text">COMMENT</h3>
@@ -61,13 +61,13 @@ function Comments({ videoData }) {
           <button
             type="submit"
             value="COMMENT"
-            class="comments-form-inputs__button comments-form-inputs__Tabletbutton button"
+            className="comments-form-inputs__button comments-form-inputs__Tabletbutton button"
           >
             <img src={commentIcon} alt="" className="button__icon" />
             <h3 className="button__text">COMMENT</h3>
           </button>
         </form>
-        <hr class="section-form__line"></hr>
+        <hr className="section-form__line"></hr>
         <section className="comments-container">
           <div className="comment-container-gen">{commentsGen}</div>
         </section>

@@ -4,12 +4,12 @@ function Next({ videoData, data, choseVid }) {
   const vidFilter = data.filter((element) => element.title !== videoData.title);
   //   console.log(vidFilter);
   const vidGen = vidFilter.map((element) => {
-    let { channel, image, title } = element;
+    let { channel, id, image, title } = element;
 
     return (
       <div
         className="next-videos-container"
-        index={element}
+        key={id}
         onClick={() => choseVid(element)}
       >
         <img src={image} alt="" className="next__video" />
