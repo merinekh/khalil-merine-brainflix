@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Next({ videoData, data, choseVid }) {
   const vidFilter = data.filter((element) => element.title !== videoData.title);
@@ -7,18 +8,15 @@ function Next({ videoData, data, choseVid }) {
     let { channel, id, image, title } = element;
 
     return (
-      <div
-        className="next-videos-container"
-        key={id}
-        index={element}
-        onClick={() => choseVid(element)}
-      >
-        <img src={image} alt="" className="next__video" />
-        <div className="next-videos-descr">
-          <h3 className="next-videos-descr__title">{title}</h3>
-          <p className="next-videos-descr__author">{channel}</p>
+      <Link to={`/${id}`}>
+        <div className="next-videos-container">
+          <img src={image} alt="" className="next__video" />
+          <div className="next-videos-descr">
+            <h3 className="next-videos-descr__title">{title}</h3>
+            <p className="next-videos-descr__author">{channel}</p>
+          </div>
         </div>
-      </div>
+      </Link>
     );
   });
   return (
