@@ -32,6 +32,25 @@ function HomePage() {
   };
   // console.log(videoData);
 
+  // // ===================Video Displayer=====================
+  // const [videoData, setVideoData] = useState(data[0]);
+  // const choseVid = (id) => {
+  //   useEffect(() => {
+  //     axios
+  //       .get(API_URL + API_PATH + `?:${id}` + +API_KEY)
+  //       .then((response) => {
+  //         setVideoData(response.data);
+  //         // console.log(response.data);
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       });
+  //   }, []);
+
+  //   // console.log(dataImportPlus);
+  //   // setVideoData(dataImportPlus);
+  // };
+  // // console.log(videoData);
   return (
     <>
       <Main videoData={videoData} />
