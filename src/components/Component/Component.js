@@ -14,6 +14,7 @@ function Component() {
         <Routes>
           <Route path="" element={<HomePage />} />
           <Route path="/videoUpload" element={<Page image={imageUpload} />} />
+          <Route path="/:videoId" element={<Page image={imageUpload} />} />
         </Routes>
       </BrowserRouter>
     </>
