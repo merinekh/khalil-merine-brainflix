@@ -68,6 +68,12 @@
       border-radius: 0.4rem;
       border: #e1e1e1 solid 0.1rem;
       color: $color--primary-black;
+      &:focus {
+        border: $color--primary-blue solid 0.2rem;
+      }
+      &:invalid {
+        border: red solid 0.1rem;
+      }
     }
     &__avatar {
       height: 1.6em;
@@ -461,7 +467,7 @@
         border-radius: 0.4rem;
         border: rgba($color--primary-silver, 0.2) solid 0.2rem;
 
-        &:active {
+        &:focus {
           border: $color--primary-blue solid 0.2rem;
         }
         &:invalid {

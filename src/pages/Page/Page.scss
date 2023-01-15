@@ -49,6 +49,12 @@
         background-color: rgba(225, 225, 225, 0.2);
         border-radius: 0.4rem;
         border: rgba(175, 175, 175, 0.2) solid 0.2rem;
+        &:focus {
+          border: $color--primary-blue solid 0.2rem;
+        }
+        &:required {
+          border: red solid 0.1rem;
+        }
       }
 
       textarea {
