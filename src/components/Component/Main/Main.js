@@ -22,7 +22,7 @@ function Main({ videoData }) {
           <div className="main-video-controller-timeline">
             <hr className="main-video-controller-timeline__line" />
             <p className="main-video-controller-timeline__duration">
-              2:00/{duration}
+              :00/{duration}
             </p>
           </div>
           <div className="main-video-controller-options">

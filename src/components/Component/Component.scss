@@ -98,6 +98,10 @@
   }
 }
 .main {
+  display: flex;
+  position: relative;
+  margin: 1.6rem -1.6rem;
+  width: 100%;
   &-bio {
     &-info {
       display: flex;
@@ -169,13 +173,19 @@
     &__line {
       margin: 0;
     }
-    @include desktop {
-      &__title {
+    &__title {
+      margin: 0rem;
+
+      @include desktop {
         margin-bottom: 1rem;
       }
     }
   }
   &-video {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 1.6rem 0rem;
     &-info {
       @include tablet {
         & > hr:first-of-type {
@@ -186,11 +196,10 @@
     &-controller {
       display: flex;
       justify-content: space-between;
-
       position: absolute;
       bottom: 0;
-      margin: 1.6rem;
-      width: 90%;
+      margin: 1.6rem 0rem;
+      width: 100%;
       height: 2rem;
 
       &-play {
@@ -299,11 +308,6 @@
         height: 5rem;
       }
     }
-
-    display: flex;
-    position: relative;
-    margin: 1.6rem -1.6rem;
-    width: 100%;
 
     &__video {
       width: 100%;
