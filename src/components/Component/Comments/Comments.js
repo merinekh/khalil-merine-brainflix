@@ -21,8 +21,8 @@ function Comments({ videoData }) {
             <img src="" alt="" className="comment__image" />
             <div className="comment-inputs">
               <div className="comment-profile">
-                <h3 className="comment-profil__name">{name}</h3>
-                <p className="comment-profil__date">{timestamp}</p>
+                <h3 className="comment-profile__name">{name}</h3>
+                <p className="comment-profile__date">{timestamp}</p>
               </div>
               <p className="comment__comment">{comment}</p>
             </div>
@@ -48,7 +48,7 @@ function Comments({ videoData }) {
                 id=""
                 cols="33"
                 rows="4"
-                placeholder="Enter your comment"
+                placeholder="Add a comment"
                 className="comments-form-inputs__comment"
               ></textarea>
               <button
@@ -69,7 +69,7 @@ function Comments({ videoData }) {
               <h3 className="button__text">COMMENT</h3>
             </button>
           </form>
-          <hr className="section-form__line"></hr>
+          <hr className="comments-form__line"></hr>
           <section className="comments-container">
             <div className="comment-container-gen">{commentsGen}</div>
           </section>

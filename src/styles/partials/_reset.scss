@@ -115,9 +115,12 @@ p {
 }
 
 * hr {
-  margin: 1.6rem 0;
+  margin: 1.1rem 0;
   border: 0;
   border-top: 0.15rem solid $color--secondary-mercury;
+  @include tablet {
+    margin: 1.6rem 0;
+  }
 }
 
 .subtitle {
