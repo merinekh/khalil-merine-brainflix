@@ -99,7 +99,7 @@
     &-info {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: baseline;
       margin: 1rem 0;
       p {
         color: $color--primary-silver;
@@ -109,6 +109,7 @@
       &-descr {
         display: flex;
         flex-direction: column;
+        align-items: baseline;
         &__author {
           font-size: 1.4rem;
           margin-top: 0;
@@ -126,6 +127,7 @@
       &-stats {
         display: flex;
         flex-direction: column;
+        align-items: center;
         margin-right: 2.4rem;
         div {
           margin: 0.7rem 0;
@@ -148,7 +150,7 @@
 
         @include tablet {
           flex-direction: row;
-          width: 30%;
+          width: 22%;
           justify-content: space-between;
         }
       }
@@ -464,6 +466,12 @@
 
         @include tablet {
           padding: 0.6rem;
+        }
+      }
+      &__button {
+        margin-top: 1.6rem;
+        @include tablet {
+          margin-top: 0;
         }
       }
       &__Tabletbutton {
