@@ -8,7 +8,7 @@ function Next({ videoData, data, choseVid }) {
     let { channel, id, image, title } = element;
 
     return (
-      <Link to={`/${id}`}>
+      <Link to={`/${id}`} key={id}>
         <div className="next-videos-container">
           <img src={image} alt="" className="next__video" />
           <div className="next-videos-descr">

@@ -51,7 +51,7 @@ function Main({ videoData }) {
                 alt=""
                 className="main-bio-info-stats-views__icons"
               />
-              <p clssName="main-bio-info-stats-views__count">{views}</p>
+              <p className="main-bio-info-stats-views__count">{views}</p>
             </div>
             <div className="main-bio-info-stats-likes">
               <img
@@ -59,7 +59,7 @@ function Main({ videoData }) {
                 alt=""
                 className="main-bio-info-stats-likes__icons"
               />
-              <p clssName="main-bio-info-stats-likes__count">{likes}</p>
+              <p className="main-bio-info-stats-likes__count">{likes}</p>
             </div>
           </div>
         </div>
