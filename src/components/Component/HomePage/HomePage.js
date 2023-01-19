@@ -1,6 +1,5 @@
 import Main from "../Main/Main";
 import Next from "../Next/Next";
-import data from "../../../data/video-details.json";
 import { useState, useEffect } from "react";
 import Comments from "../Comments/Comments";
 import axios from "axios";

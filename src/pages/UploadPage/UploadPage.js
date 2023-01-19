@@ -1,4 +1,4 @@
-import "./Page.scss";
+import "./UploadPage.scss";
 import React from "react";
 import upload from "../../assets/images/publish.svg";
 import { useNavigate, NavLink } from "react-router-dom";
