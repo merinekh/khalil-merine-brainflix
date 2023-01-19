@@ -8,10 +8,13 @@ function Page({ image }) {
 
   const handleOnclick = () => {
     let newTitle = document.getElementById("newTitle").value;
-    let newDescr = document.getElementById("newTitle").value;
-    console.log(newTitle, newDescr);
+    let newDescr = document.getElementById("newDescr").value;
+    // console.log(newTitle, newDescr);
+
     navigate(
-      newTitle && newDescr ? "/" : alert("Please Enter Title and Description")
+      newTitle && newDescr
+        ? "/" + alert("Video Submitted.")
+        : alert("Please Enter Title and Description")
     );
   };
   return (
