@@ -1,7 +1,7 @@
-import Main from "../Main/Main";
-import Next from "../Next/Next";
+import Main from "../../components/Component/Main/Main";
+import Next from "../../components/Component/Next/Next";
 import { useState, useEffect } from "react";
-import Comments from "../Comments/Comments";
+import Comments from "../../components/Component/Comments/Comments";
 import axios from "axios";
 import { useParams } from "react-router";
 
