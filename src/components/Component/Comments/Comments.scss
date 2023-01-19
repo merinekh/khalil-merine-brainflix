@@ -1,0 +1,139 @@
+@use "../../../styles/partials/variables.scss" as *;
+@use "../../../styles/partials/mixins.scss" as *;
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  &-container {
+    display: flex;
+  }
+  &-form {
+    &-main {
+      display: flex;
+      @include tablet {
+        align-items: flex-end;
+      }
+    }
+    &__image {
+      display: flex;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      margin-right: 1.6rem;
+      margin-top: 1.6rem;
+    }
+    &-inputs {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      textarea {
+        padding: 1.6rem;
+        width: 100%;
+        background-color: rgba($color--secondary-mercury, 0.2);
+        border-radius: 0.4rem;
+        border: rgba($color--primary-silver, 0.2) solid 0.2rem;
+
+        &:focus {
+          border: $color--primary-blue solid 0.2rem;
+        }
+        &:invalid {
+          border: red solid 0.1rem;
+        }
+
+        @include tablet {
+          padding: 0.6rem;
+        }
+      }
+      &__button {
+        margin-top: 1.6rem;
+        @include tablet {
+          margin-top: 0;
+        }
+      }
+      &__Tabletbutton {
+        display: none;
+      }
+      @include tablet {
+        margin: 0 1.6rem;
+        width: 100%;
+        button {
+          display: none;
+        }
+        &__comment {
+          height: 4rem;
+        }
+        &__Tabletbutton {
+          display: flex;
+          width: 30%;
+          @include desktop {
+            width: 20%;
+          }
+        }
+      }
+    }
+
+    &-subtitle {
+      margin: 0;
+      font-weight: 500;
+      color: $color--primary-silver;
+      @include tablet {
+        font-size: 1.2rem;
+      }
+    }
+    @include tablet {
+      &__line {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include desktop {
+    border-right: $color--secondary-mercury solid 0.2rem;
+    padding-right: 2rem;
+  }
+}
+
+.comment {
+  &-container {
+    display: flex;
+    align-items: center;
+    img {
+      width: 4rem;
+      height: 4rem;
+      margin-right: 1.6rem;
+      border-radius: 50%;
+      background-color: $color--primary-silver;
+    }
+    @include tablet {
+      &-items {
+        margin: 2rem 0;
+      }
+    }
+  }
+  &-inputs {
+    width: 80%;
+    @include tablet {
+      width: 100%;
+    }
+  }
+  &-profile {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    p {
+      color: $color--primary-silver;
+    }
+    &__name,
+    &__date {
+      @include tablet {
+        margin: 0;
+      }
+    }
+  }
+  &__comment {
+    margin: 0;
+  }
+  @include tablet {
+  }
+}

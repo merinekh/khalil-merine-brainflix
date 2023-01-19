@@ -1,4 +1,5 @@
 import React from "react";
+import "./Next.scss";
 import { Link } from "react-router-dom";
 
 function Next({ videoData, data, choseVid }) {

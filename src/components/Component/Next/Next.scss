@@ -1,0 +1,36 @@
+@use "../../../styles/partials/variables.scss" as *;
+@use "../../../styles/partials/mixins.scss" as *;
+
+.next {
+  &-videos {
+    &-container {
+      display: flex;
+      height: 8rem;
+
+      margin-bottom: 1.6rem;
+    }
+    &-descr {
+      width: 60%;
+      margin-left: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      * {
+        margin: 0;
+        color: $color--primary-black;
+      }
+    }
+
+    @include tablet {
+      width: 50%;
+    }
+    @include desktop {
+      width: 120%;
+    }
+  }
+  &__video {
+    width: 10rem;
+    border-radius: 0.4rem;
+    background-color: $color--secondary-mercury;
+  }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import "./Comments.scss";
 import mohAvatar from "../../../assets/images/Mohan-muruge.jpg";
 import commentIcon from "../../../assets/images/add_comment.svg";
 

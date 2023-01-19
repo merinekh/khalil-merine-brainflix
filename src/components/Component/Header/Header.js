@@ -1,4 +1,5 @@
 import React from "react";
+import "./Header.scss";
 import BrainflixLogo from "../../../assets/images/BrainFlix-logo.svg";
 import upload from "../../../assets/images/upload.svg";
 import Avatar from "../../../assets/images/Mohan-muruge.jpg";

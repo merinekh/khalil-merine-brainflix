@@ -1,4 +1,5 @@
 import React from "react";
+import "./Main.scss";
 import { IoMdVolumeHigh } from "react-icons/io";
 import { MdOutlineFullscreen } from "react-icons/md";
 import { FaPlay } from "react-icons/fa";

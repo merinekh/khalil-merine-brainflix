@@ -1,6 +1,5 @@
 import "./App.scss";
 import React from "react";
-import "./components/Component/Component.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Page from "./pages/UploadPage/UploadPage";
 import Header from "./components/Component/Header/Header";

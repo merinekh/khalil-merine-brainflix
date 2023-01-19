@@ -1,0 +1,99 @@
+@use "../../../styles/partials/variables.scss" as *;
+@use "../../../styles/partials/mixins.scss" as *;
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
+  width: 100%;
+  & > img {
+    display: none;
+  }
+  @include tablet {
+    flex-direction: row;
+    align-items: center;
+    height: 4rem;
+
+    & > img {
+      display: flex;
+    }
+
+    &-search {
+      &__avatar {
+        display: none;
+      }
+      &__tabletavatar {
+        margin-left: 1.6rem;
+      }
+    }
+  }
+
+  &-logo {
+    display: flex;
+    justify-content: center;
+    &__logo {
+      display: flex;
+    }
+    @include desktop {
+      &__logo {
+        height: 3rem;
+      }
+    }
+  }
+
+  &-search {
+    display: flex;
+    margin: 1.6rem 0;
+    width: 100%;
+
+    &-inputs {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      svg {
+        position: absolute;
+        padding: 0.4rem;
+        margin-left: 0.6rem;
+      }
+      @include tablet {
+        width: 27rem;
+      }
+    }
+    &__input {
+      width: 100%;
+      margin-right: 1.6rem;
+      padding: 0.9rem;
+      padding-left: 3rem;
+      border-radius: 0.4rem;
+      border: #e1e1e1 solid 0.1rem;
+      color: $color--primary-black;
+      &:focus {
+        border: $color--primary-blue solid 0.2rem;
+      }
+      &:invalid {
+        border: red solid 0.1rem;
+      }
+    }
+    &__avatar {
+      height: 1.6em;
+      width: 3.6rem;
+      border-radius: 50%;
+    }
+
+    @include tablet {
+      margin: 0;
+      margin-left: 15rem;
+    }
+    @include desktop {
+      margin: 0;
+      margin-left: 50rem;
+    }
+  }
+}
+
+.navLink {
+  &__upload {
+    width: 100%;
+  }
+}
