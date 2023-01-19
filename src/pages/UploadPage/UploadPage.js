@@ -1,7 +1,8 @@
 import "./UploadPage.scss";
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import upload from "../../assets/images/publish.svg";
-import { useNavigate, NavLink, useRef } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
+import axios from "axios";
 
 function Page({ image }) {
   let navigate = useNavigate();
@@ -15,25 +16,29 @@ function Page({ image }) {
       setVideos(response.data);
     });
   }, []);
-
+  console.log(formRef);
   const addVideo = (e) => {
-    e.preventDefault();
-    // Add students to the back-end server, and then update
-    // the state with the response
-    const formData = {
-      title: formRef.current.title.value,
-      channel: formRef.current.channel.value,
-      image: image,
-    };
-    axios
-      .post(BASE_URL, formData)
-      .then((response) => setVideos([...students, response.data]));
+    if (formRef) {
+      e.preventDefault();
+      // Add students to the back-end server, and then update
+      // the state with the response
+      const formData = {
+        title: formRef.current.title.value,
+        channel: formRef.current.channel.value,
+        image: image,
+      };
+      axios
+        .post(BASE_URL, formData)
+        .then((response) => setVideos([...videos, response.data]));
 
-    navigate(
-      newTitle && newDescr
-        ? "/" + alert("Video Submitted.")
-        : alert("Please Enter Title and Description")
-    );
+      navigate(
+        formRef.current.title.value && formRef.current.channel.value
+          ? "/" + alert("Video Submitted.")
+          : alert("Please Enter Title and Description")
+      );
+    } else {
+      alert("Please Enter Title and Description");
+    }
   };
 
   return (
@@ -79,6 +84,7 @@ function Page({ image }) {
             </NavLink>
 
             <button
+              type="submit"
               className="upload-content-buttons__publish"
               onClick={addVideo}
             >
