@@ -1,15 +1,33 @@
 import "./UploadPage.scss";
 import React from "react";
 import upload from "../../assets/images/publish.svg";
-import { useNavigate, NavLink } from "react-router-dom";
+import { useNavigate, NavLink, useRef } from "react-router-dom";
 
 function Page({ image }) {
   let navigate = useNavigate();
+  const [videos, setVideos] = useState([]);
+  const formRef = useRef();
+  const BASE_URL = "http://localhost:8080/videos";
 
-  const handleOnclick = () => {
-    let newTitle = document.getElementById("newTitle").value;
-    let newDescr = document.getElementById("newDescr").value;
-    // console.log(newTitle, newDescr);
+  useEffect(() => {
+    // Get Students from the back-end server here
+    axios.get(BASE_URL).then((response) => {
+      setVideos(response.data);
+    });
+  }, []);
+
+  const addVideo = (e) => {
+    e.preventDefault();
+    // Add students to the back-end server, and then update
+    // the state with the response
+    const formData = {
+      title: formRef.current.title.value,
+      channel: formRef.current.channel.value,
+      image: image,
+    };
+    axios
+      .post(BASE_URL, formData)
+      .then((response) => setVideos([...students, response.data]));
 
     navigate(
       newTitle && newDescr
@@ -17,6 +35,7 @@ function Page({ image }) {
         : alert("Please Enter Title and Description")
     );
   };
+
   return (
     <>
       <hr className="upload-line__header" />
@@ -61,7 +80,7 @@ function Page({ image }) {
 
             <button
               className="upload-content-buttons__publish"
-              onClick={handleOnclick}
+              onClick={addVideo}
             >
               <img
                 src={upload}
