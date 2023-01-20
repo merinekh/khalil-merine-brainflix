@@ -8,13 +8,12 @@ import { useParams } from "react-router";
 function HomePage() {
   // =============Import Video info for SideBar=================
   const [dataimport, setDataImport] = useState([]);
-  const API_URL = "https://project-2-api.herokuapp.com/";
+  const API_URL = "http://localhost:8080/";
   const API_PATH = "videos/";
-  const API_KEY = "?api_key=c473bb50-76c8-4bb6-96a8-4e8e5acefe10";
 
   useEffect(() => {
     axios
-      .get(API_URL + API_PATH + API_KEY)
+      .get(API_URL + API_PATH)
       .then((response) => {
         setDataImport(response.data);
         // console.log(response.data);
@@ -34,7 +33,7 @@ function HomePage() {
     // console.log(API_URL + API_PATH + `${videoId}` + API_KEY);
     if (videoId) {
       axios
-        .get(API_URL + API_PATH + `${videoId}` + API_KEY)
+        .get(API_URL + API_PATH + `${videoId}`)
         .then((response) => {
           setVideoData(response.data);
           // console.log(response.data);

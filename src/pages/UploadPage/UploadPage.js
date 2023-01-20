@@ -3,6 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import upload from "../../assets/images/publish.svg";
 import { useNavigate, NavLink } from "react-router-dom";
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 
 function Page({ image }) {
   let navigate = useNavigate();
@@ -16,31 +17,35 @@ function Page({ image }) {
       setVideos(response.data);
     });
   }, []);
-  console.log(formRef);
+  // console.log(formRef.current.newTitle.value);
   const addVideo = (e) => {
     if (formRef) {
       e.preventDefault();
       // Add students to the back-end server, and then update
       // the state with the response
+      // console.log(formRef);
       const formData = {
-        title: formRef.current.title.value,
-        channel: formRef.current.channel.value,
+        id: uuidv4(),
+        title: formRef.current.newTitle.value,
+        channel: "Khalil",
+        descr: formRef.current.newDescr.value,
         image: image,
+        views: "0",
+        likes: "0",
+        duration: "2:01",
+        video: "https://project-2-api.herokuapp.com/stream",
+        timestamp: Date.now(),
+        comments: [],
       };
+      console.log(formData);
       axios
         .post(BASE_URL, formData)
         .then((response) => setVideos([...videos, response.data]));
 
-      navigate(
-        formRef.current.title.value && formRef.current.channel.value
-          ? "/" + alert("Video Submitted.")
-          : alert("Please Enter Title and Description")
-      );
-    } else {
-      alert("Please Enter Title and Description");
+      navigate("/");
     }
   };
-
+  // console.log(formRef.current.newTitle.value);
   return (
     <>
       <hr className="upload-line__header" />
@@ -54,7 +59,11 @@ function Page({ image }) {
               </p>
               <img src={image} alt="" className="upload-content-video__video" />
             </div>
-            <form className="upload-content-inputs">
+            <form
+              className="upload-content-inputs"
+              ref={formRef}
+              onSubmit={addVideo}
+            >
               <p className="upload-content-inputs__title subtitle">
                 TITLE OF YOUR VIDEO
               </p>
@@ -64,6 +73,7 @@ function Page({ image }) {
                 id="newTitle"
                 className="upload-content-inputs__titleinput"
                 placeholder="Add a title to your video"
+                required
               />
               <p className="upload-content-inputs__title subtitle">
                 ADD A VIDEO DESCRIPTION
@@ -74,29 +84,30 @@ function Page({ image }) {
                 id="newDescr"
                 className="upload-content-inputs__titleinput"
                 placeholder="Add a description to your video"
+                required
               />
+              <div className="upload-content-buttons">
+                <NavLink to="/">
+                  <button className="upload-content-buttons__cancel">
+                    CANCEL
+                  </button>
+                </NavLink>
+
+                <button
+                  type="submit"
+                  className="upload-content-buttons__publish"
+                >
+                  <img
+                    src={upload}
+                    alt=""
+                    className="upload-content-buttons__icon"
+                  />
+                  <h3 className="upload-content-buttons__text button__text">
+                    PUBLISH
+                  </h3>
+                </button>
+              </div>
             </form>
-          </div>
-
-          <div className="upload-content-buttons">
-            <NavLink to="/">
-              <button className="upload-content-buttons__cancel">CANCEL</button>
-            </NavLink>
-
-            <button
-              type="submit"
-              className="upload-content-buttons__publish"
-              onClick={addVideo}
-            >
-              <img
-                src={upload}
-                alt=""
-                className="upload-content-buttons__icon"
-              />
-              <h3 className="upload-content-buttons__text button__text">
-                PUBLISH
-              </h3>
-            </button>
           </div>
         </div>
       </div>
