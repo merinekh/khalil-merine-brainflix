@@ -5,7 +5,7 @@ import { useNavigate, NavLink } from "react-router-dom";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 
-function Page({ image }) {
+function Page() {
   let navigate = useNavigate();
   const [videos, setVideos] = useState([]);
   const formRef = useRef();
@@ -29,7 +29,7 @@ function Page({ image }) {
         title: formRef.current.newTitle.value,
         channel: "Khalil",
         descr: formRef.current.newDescr.value,
-        image: image,
+        image: "http://localhost:8080/Upload-video-preview.jpg",
         views: "0",
         likes: "0",
         duration: "2:01",
@@ -57,7 +57,11 @@ function Page({ image }) {
               <p className="upload-content-video__title subtitle">
                 VIDEO THUMBNAIL
               </p>
-              <img src={image} alt="" className="upload-content-video__video" />
+              <img
+                src="http://localhost:8080/Upload-video-preview.jpg"
+                alt=""
+                className="upload-content-video__video"
+              />
             </div>
             <form
               className="upload-content-inputs"
