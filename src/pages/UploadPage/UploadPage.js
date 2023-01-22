@@ -1,6 +1,7 @@
 import "./UploadPage.scss";
 import React, { useRef, useState, useEffect } from "react";
 import upload from "../../assets/images/publish.svg";
+import uploadVid from "../../assets/images/Upload-video-preview.jpg";
 import { useNavigate, NavLink } from "react-router-dom";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
@@ -25,17 +26,8 @@ function Page() {
       // the state with the response
       // console.log(formRef);
       const formData = {
-        id: uuidv4(),
         title: formRef.current.newTitle.value,
-        channel: "Khalil",
-        descr: formRef.current.newDescr.value,
-        image: "http://localhost:8080/Upload-video-preview.jpg",
-        views: "0",
-        likes: "0",
-        duration: "2:01",
-        video: "https://project-2-api.herokuapp.com/stream",
-        timestamp: Date.now(),
-        comments: [],
+        description: formRef.current.newDescr.value,
       };
       console.log(formData);
       axios
@@ -58,7 +50,7 @@ function Page() {
                 VIDEO THUMBNAIL
               </p>
               <img
-                src="http://localhost:8080/Upload-video-preview.jpg"
+                src={uploadVid}
                 alt=""
                 className="upload-content-video__video"
               />

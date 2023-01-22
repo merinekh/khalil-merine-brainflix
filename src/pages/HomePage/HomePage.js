@@ -24,7 +24,7 @@ function HomePage() {
   }, []);
 
   // ================Choose Video to Display==============
-  const [videoData, setVideoData] = useState([]);
+  const [videoData, setVideoData] = useState({});
   const { Id } = useParams();
   // console.log(Id);
   const videoId = Id || "84e96018-4022-434e-80bf-000ce4cd12b8";
@@ -35,8 +35,8 @@ function HomePage() {
       axios
         .get(API_URL + API_PATH + `${videoId}`)
         .then((response) => {
-          setVideoData(response.data);
-          // console.log(response.data);
+          setVideoData(response.data.find((element) => element.id === videoId));
+          // console.log(response.data.find((element) => element.id === videoId));
         })
         .catch((err) => {
           console.log(err);
