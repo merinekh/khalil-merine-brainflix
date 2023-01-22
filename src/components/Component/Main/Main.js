@@ -8,7 +8,7 @@ import likesIcon from "../../../assets/images/likes.svg";
 function Main({ videoData }) {
   let { channel, description, duration, likes, image, title, video, views } =
     videoData;
-  console.log(videoData);
+  // console.log(videoData);
   return (
     <>
       <div className="main-video">
